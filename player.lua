@@ -15,4 +15,13 @@ function Player.new(x, y)
   return self
 end
 
+function Player:update(dt, map)
+  local moveX, moveY = 0, 0
+
+  if love.keyboard.isDown("w", "up") then moveY = -1 end
+  if love.keyboard.isDown("s", "down") then moveY = 1 end
+  if love.keyboard.isDown("a", "left") then moveX = -1 end
+  if love.keyboard.isDown("d", "right") then moveX = 1 end
+end
+
 return Player
