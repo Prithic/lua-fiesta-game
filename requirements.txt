@@ -1,0 +1,6 @@
+# Game Framework
+love2d>=11.0
+
+# Dependencies
+# No external Lua libraries are installed.
+# We're using standard Lua and the built-in LÖVE drawing and physics functions.
