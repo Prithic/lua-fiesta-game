@@ -30,6 +30,26 @@ function Player:update(dt, map)
 
   local newX = self.x + moveX * self.speed * dt
   local newY = self.y + moveY * self.speed * dt
+
+  if not map:collides(newX, self.y, self.size) then
+    self.x = newX
+  end
+  if not map:collides(self.x, newY, self.size) then
+    self.y = newY
+  end
+end
+
+function Player:draw()
+  love.graphics.draw(
+    self.sprite,
+    self.x,
+    self.y,
+    0,
+    self.spriteScale,
+    self.spriteScale,
+    self.sprite:getWidth() / 2,
+    self.sprite:getHeight() / 2
+  )
 end
 
 return Player
