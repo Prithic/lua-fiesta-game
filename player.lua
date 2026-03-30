@@ -8,6 +8,10 @@ function Player.new(x, y)
   self.speed = 120
   self.size = 20
   
+  self.sprite = love.graphics.newImage("Resources/Hungry-dino 2.png")
+  local maxDim = math.max(self.sprite:getWidth(), self.sprite:getHeight())
+  self.spriteScale = self.size / maxDim
+
   return self
 end
 
