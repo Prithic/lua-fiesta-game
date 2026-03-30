@@ -22,6 +22,14 @@ function Player:update(dt, map)
   if love.keyboard.isDown("s", "down") then moveY = 1 end
   if love.keyboard.isDown("a", "left") then moveX = -1 end
   if love.keyboard.isDown("d", "right") then moveX = 1 end
+
+  if moveX ~= 0 and moveY ~= 0 then
+    moveX = moveX * 0.7071
+    moveY = moveY * 0.7071
+  end 
+
+  local newX = self.x + moveX * self.speed * dt
+  local newY = self.y + moveY * self.speed * dt
 end
 
 return Player
