@@ -69,5 +69,4 @@ function Map:collides(px, py, size)
     tileAt(left, bottom) == 1 or
     tileAt(right, bottom) == 1
 end
-
-return Map
+ return Map
